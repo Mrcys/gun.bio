@@ -1,0 +1,1 @@
+export * from './Sections/Home/Hero';
