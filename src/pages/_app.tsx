@@ -26,12 +26,6 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
-
-if (typeof window !== 'undefined' && !('requestIdleCallback' in window)) {
-  window.requestIdleCallback = (fn) => setTimeout(fn, 1);
-  window.cancelIdleCallback = (e) => clearTimeout(e);
-}
-
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout ?? (page => page);
   NProgress.configure({
